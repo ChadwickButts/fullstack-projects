@@ -1,0 +1,24 @@
+.postForm {
+    background-color: var(--tertiary);
+    margin: 5px auto;
+    padding: 10px;
+    border: 2px solid var(--main);
+    border-radius: 10px;
+}
+
+#closeBtn {
+    float: right;
+}
+
+.titleInput {
+    margin: 10px auto;
+}
+
+.contentText {
+    width: 100%;
+    height: 200px;
+}
+
+#postBtn {
+    margin: 10px auto;
+}

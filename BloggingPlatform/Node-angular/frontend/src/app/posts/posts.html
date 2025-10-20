@@ -1,0 +1,35 @@
+<div class="postsPage">
+    <div class="hero">
+        <h1>Blog Posts</h1>
+    </div>
+    <div class="postIdBtn">
+        <input type="number" name="postId" #postIdInput (keyup.enter)="getPostById()" placeholder="Enter Post ID"/>
+        <button id="findBtn" type="button" (click)="getPostById()">Find Post</button>
+    </div>
+
+    <div class="termsBtn">
+        <input type="text" name="searchTerm" #termInput (keyup.enter)="getPostsByTerm()" placeholder="Enter Search Term"/>
+        <button id="searchBtn" type="button" (click)="getPostsByTerm()">Search Terms</button>
+    </div>
+
+    <div class="btns">
+        <button id="resetBtn" type="button" (click)="getPosts()">Reset</button>
+        <button id="newPostBtn" type="button" (click)="showCreatePost()" [class.hide]="showCreateForm">New Post</button>
+    </div>
+
+    <create-post [(showForm)]="showCreateForm" (updatedPosts)="handleUpdatePosts($event)"/>
+
+    @if (postsCount() > 0 && !loading()) {
+        @for (post of posts(); track post.id) {
+        <article class="blog-post" style="--index: {{ $index }}" animate.enter="fadeIn">
+            <h4>{{post.title}}</h4>
+            <p>{{post.content}}</p>
+            <span>{{post.category}}</span>
+        </article>
+        }
+    } @else if (loading()) {
+
+    } @else {
+        <h4>No posts found.</h4>
+    }
+</div>

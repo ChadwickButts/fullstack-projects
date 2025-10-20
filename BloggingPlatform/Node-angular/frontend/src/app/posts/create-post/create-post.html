@@ -1,0 +1,16 @@
+@if ((showForm())) {
+    <form class="postForm" [formGroup]="newPostGroup" (ngSubmit)="createPost()">
+        <button id="closeBtn" type="button" (click)="hideForm()">Close</button>
+        <h4>Create New Post</h4>
+        <div class="titleInput">
+            <label for="title">Title: </label>
+            <input type="text" name="title" formControlName="title" />
+        </div>
+        <div class="contentBox">
+            <label for="content">Content: </label>
+            <br>
+            <textarea class="contentText" name="content" formControlName="content"></textarea>
+        </div>
+        <button id="postBtn" type="submit" [disabled]="!newPostGroup.valid">Post!</button>
+    </form>
+}
