@@ -1,0 +1,21 @@
+{
+  "name": "blogging-api",
+  "version": "1.0.0",
+  "description": "A RESTful API with basic CRUD operations for a personal blogging platform. https://roadmap.sh/projects/blogging-platform-api",
+  "license": "ISC",
+  "author": "Chadwick Butts",
+  "type": "module",
+  "main": "blogging-platform.js",
+  "scripts": {
+    "start": "node ./server/blogging-platform-node.js",
+    "express": "node ./server/blogging-platform-express.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

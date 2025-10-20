@@ -1,0 +1,257 @@
+<html>
+
+<body>
+    <h2>This is a beginner backend project from 
+        <a target="_blank" href="https://roadmap.sh/projects/blogging-platform-api">here</a>.
+        <br/>The instructions/requirements are below.
+        <br/><br/>Note: All html/text beyond this point was copied and pasted.
+    </h2>
+    <div
+        class="prose prose-h2:mb-3 prose-h2:mt-5 prose-h3:mb-1 prose-h3:mt-5 prose-p:mb-2 prose-blockquote:font-normal prose-blockquote:text-gray-500 prose-pre:my-3 prose-ul:my-3.5 prose-hr:my-5 prose-li:[&amp;&gt;p]:m-0 max-w-full [&amp;&gt;ul&gt;li]:my-1">
+        <p>You are required to create a simple RESTful API with basic CRUD operations for a personal blogging platform.
+            CRUD stands for Create, Read, Update, and Delete.</p>
+        <h2 id="goals">Goals</h2>
+        <p>The goals of this project are to help you:</p>
+        <ul>
+            <li>
+                <p>Understand what the RESTful APIs are including best practices and conventions</p>
+            </li>
+            <li>
+                <p>Learn how to create a RESTful API</p>
+            </li>
+            <li>
+                <p>Learn about common HTTP methods like GET, POST, PUT, PATCH, DELETE</p>
+            </li>
+            <li>
+                <p>Learn about status codes and error handling in APIs</p>
+            </li>
+            <li>
+                <p>Learn how to perform CRUD operations using an API</p>
+            </li>
+            <li>
+                <p>Learn how to work with databases</p>
+            </li>
+        </ul>
+        <h2 id="requirements">Requirements</h2>
+        <p>You should create a RESTful API for a personal blogging platform. The API should allow users to perform the
+            following operations:</p>
+        <ul>
+            <li>
+                <p>Create a new blog post</p>
+            </li>
+            <li>
+                <p>Update an existing blog post</p>
+            </li>
+            <li>
+                <p>Delete an existing blog post</p>
+            </li>
+            <li>
+                <p>Get a single blog post</p>
+            </li>
+            <li>
+                <p>Get all blog posts</p>
+            </li>
+            <li>
+                <p>Filter blog posts by a search term</p>
+            </li>
+        </ul>
+        <p>Given below are the details for each API operation.</p>
+        <h3 id="create-blog-post">Create Blog Post</h3>
+        <p>Create a new blog post using the <code>POST</code> method</p>
+        <div>
+            <div>
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span>POST /posts</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  "title": "My First Blog Post",</span></span>
+<span class="line"><span>  "content": "This is the content of my first blog post.",</span></span>
+<span class="line"><span>  "category": "Technology",</span></span>
+<span class="line"><span>  "tags": ["Tech", "Programming"]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>Each blog post should have the following fields:</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "title"</span><span style="color:#24292E">: </span><span style="color:#032F62">"My First Blog Post"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "content"</span><span style="color:#24292E">: </span><span style="color:#032F62">"This is the content of my first blog post."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "category"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Technology"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "tags"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"Tech"</span><span style="color:#24292E">, </span><span style="color:#032F62">"Programming"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>The endpoint should validate the request body and return a <code>201 Created</code> status code with the
+            newly created blog post i.e.</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "id"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "title"</span><span style="color:#24292E">: </span><span style="color:#032F62">"My First Blog Post"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "content"</span><span style="color:#24292E">: </span><span style="color:#032F62">"This is the content of my first blog post."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "category"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Technology"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "tags"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"Tech"</span><span style="color:#24292E">, </span><span style="color:#032F62">"Programming"</span><span style="color:#24292E">],</span></span>
+<span class="line"><span style="color:#005CC5">  "createdAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:00:00Z"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "updatedAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:00:00Z"</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>or a <code>400 Bad Request</code> status code with error messages in case of validation errors.</p>
+        <h2 id="update-blog-post">Update Blog Post</h2>
+        <p>Update an existing blog post using the <code>PUT</code> method</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span>PUT /posts/1</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  "title": "My Updated Blog Post",</span></span>
+<span class="line"><span>  "content": "This is the updated content of my first blog post.",</span></span>
+<span class="line"><span>  "category": "Technology",</span></span>
+<span class="line"><span>  "tags": ["Tech", "Programming"]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>The endpoint should validate the request body and return a <code>200 OK</code> status code with the updated
+            blog post i.e.</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "id"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "title"</span><span style="color:#24292E">: </span><span style="color:#032F62">"My Updated Blog Post"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "content"</span><span style="color:#24292E">: </span><span style="color:#032F62">"This is the updated content of my first blog post."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "category"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Technology"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "tags"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"Tech"</span><span style="color:#24292E">, </span><span style="color:#032F62">"Programming"</span><span style="color:#24292E">],</span></span>
+<span class="line"><span style="color:#005CC5">  "createdAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:00:00Z"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "updatedAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:30:00Z"</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>or a <code>400 Bad Request</code> status code with error messages in case of validation errors. It should
+            return a <code>404 Not Found</code> status code if the blog post was not found.</p>
+        <h3 id="delete-blog-post">Delete Blog Post</h3>
+        <p>Delete an existing blog post using the <code>DELETE</code> method</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span>DELETE /posts/1</span></span>
+<span class="line"><span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>The endpoint should return a <code>204 No Content</code> status code if the blog post was successfully
+            deleted or a <code>404 Not Found</code> status code if the blog post was not found.</p>
+        <h3 id="get-blog-post">Get Blog Post</h3>
+        <p>Get a single blog post using the <code>GET</code> method</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span>GET /posts/1</span></span>
+<span class="line"><span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>The endpoint should return a <code>200 OK</code> status code with the blog post i.e.</p>
+
+        <div
+            class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+            <div>
+                <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "id"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "title"</span><span style="color:#24292E">: </span><span style="color:#032F62">"My First Blog Post"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "content"</span><span style="color:#24292E">: </span><span style="color:#032F62">"This is the content of my first blog post."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "category"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Technology"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "tags"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"Tech"</span><span style="color:#24292E">, </span><span style="color:#032F62">"Programming"</span><span style="color:#24292E">],</span></span>
+<span class="line"><span style="color:#005CC5">  "createdAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:00:00Z"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "updatedAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:00:00Z"</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+            </div>
+        </div>
+
+        <p>or a <code>404 Not Found</code> status code if the blog post was not found.</p>
+        <h3 id="get-all-blog-posts">Get All Blog Posts</h3>
+        <p>Get all blog posts using the <code>GET</code> method</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span>GET /posts</span></span>
+<span class="line"><span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>The endpoint should return a <code>200 OK</code> status code with an array of blog posts i.e.</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">[</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#005CC5">    "id"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "title"</span><span style="color:#24292E">: </span><span style="color:#032F62">"My First Blog Post"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "content"</span><span style="color:#24292E">: </span><span style="color:#032F62">"This is the content of my first blog post."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "category"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Technology"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "tags"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"Tech"</span><span style="color:#24292E">, </span><span style="color:#032F62">"Programming"</span><span style="color:#24292E">],</span></span>
+<span class="line"><span style="color:#005CC5">    "createdAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:00:00Z"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "updatedAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:00:00Z"</span></span>
+<span class="line"><span style="color:#24292E">  },</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#005CC5">    "id"</span><span style="color:#24292E">: </span><span style="color:#005CC5">2</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "title"</span><span style="color:#24292E">: </span><span style="color:#032F62">"My Second Blog Post"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "content"</span><span style="color:#24292E">: </span><span style="color:#032F62">"This is the content of my second blog post."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "category"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Technology"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "tags"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"Tech"</span><span style="color:#24292E">, </span><span style="color:#032F62">"Programming"</span><span style="color:#24292E">],</span></span>
+<span class="line"><span style="color:#005CC5">    "createdAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:30:00Z"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "updatedAt"</span><span style="color:#24292E">: </span><span style="color:#032F62">"2021-09-01T12:30:00Z"</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">]</span></span>
+<span class="line"></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>You don't have to implement pagination, authentication or authorization for this project. You can focus on
+            the core functionality of the API.</p>
+        <p>While retrieving posts, user can also filter posts by a search term. You should do a wildcard search on the
+            title, content or category fields of the blog posts. For example:</p>
+        <div class="not-prose my-6 w-full max-w-full overflow-hidden rounded-lg border border-gray-200">
+
+            <div
+                class="mt-0 text-sm [&amp;_pre]:py-0 [&amp;_pre]:grid [&amp;_code]:py-4 [&amp;_code]:w-full [&amp;_code]:grid [&amp;_code]:overflow-x-auto [&amp;_code]:no-scrollbar [&amp;_code]:bg-transparent [&amp;_.line]:px-3 [&amp;_.line]:w-full [&amp;_.line]:relative [&amp;_.line]:min-h-5">
+                <div>
+                    <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span>GET /posts?term=tech</span></span>
+<span class="line"><span></span></span></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>This should return all blog posts that have the term "tech" in their title, content or category. You can use
+            a simple SQL query if you are using a SQL database or a similar query for a NoSQL database.</p>  
+    </div>
+</body>
+
+</html>
