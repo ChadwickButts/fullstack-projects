@@ -1,4 +1,5 @@
-Start the server with 'npm start' for node or 'npm run express' for express version. 
+Start the server with 'npm start' for node or 'npm run express' for express version.
+The Express server has not yet been updated to work with the frontend.
 
 Serve the frontend with 'ng serve'.
 
