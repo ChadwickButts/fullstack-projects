@@ -6,10 +6,10 @@
 
 .hero {
     display: flex;
-    width: 100%;
+    max-width: 800px;
     background-color: var(--tertiary-light);
     border-radius: 10px;
-    margin: 10px 0;
+    margin: 10px auto;
 
     & h1 {
         margin: 5px 0;
@@ -19,11 +19,22 @@
 
 .postIdBtn,
 .termsBtn {
+    max-width: 800px;
     margin: 10px auto;
 
     & button {
         margin: auto 5px;
     }
+}
+
+.btns {
+    max-width: 800px;
+    margin: auto;
+}
+
+.posts {
+    max-width: 800px;
+    margin: auto;
 }
 
 .blog-post {

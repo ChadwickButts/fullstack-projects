@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class App {
-  protected readonly title = signal('blogging-platform-app');
+  protected readonly title = signal('Blogger!');
 }

@@ -19,6 +19,7 @@
 
     <create-post [(showForm)]="showCreateForm" (updatedPosts)="handleUpdatePosts($event)"/>
 
+    <div class="posts">
     @if (postsCount() > 0 && !loading()) {
         @for (post of posts(); track post.id) {
         <article class="blog-post" style="--index: {{ $index }}" animate.enter="fadeIn">
@@ -32,4 +33,5 @@
     } @else {
         <h4>No posts found.</h4>
     }
+    </div>
 </div>

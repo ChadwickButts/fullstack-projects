@@ -1,8 +1,7 @@
 Start the server with 'npm start' for node or 'npm run express' for express version. 
 
-The project description will load when the browser window is opened.
+Serve the frontend with 'ng serve'.
 
-After starting the server, make the application 'Public' in order to 
-make requests via Postman.
+Currently, the posts that you create will not be persisted. 
 
-To create, update, or delete a post, I recommend using Postman.
+The app includes basic CRUD operations. Editing a post will be added later.
