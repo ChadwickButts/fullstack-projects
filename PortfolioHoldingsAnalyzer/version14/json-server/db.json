@@ -1,0 +1,104 @@
+{
+    "positions": [
+  {
+    "ticker": "AAPL",
+    "name": "Apple Inc.",
+    "sector": "Technology",
+    "shares": 120,
+    "costBasis": 142.50,
+    "marketPrice": 187.20,
+    "marketValue": 22464.00,
+    "gainLossPct": 31.3
+  },
+  {
+    "ticker": "MSFT",
+    "name": "Microsoft Corp.",
+    "sector": "Technology",
+    "shares": 80,
+    "costBasis": 255.10,
+    "marketPrice": 327.50,
+    "marketValue": 26200.00,
+    "gainLossPct": 28.3
+  },
+  {
+    "ticker": "GOOGL",
+    "name": "Alphabet Inc. Class A",
+    "sector": "Communication Services",
+    "shares": 50,
+    "costBasis": 102.30,
+    "marketPrice": 141.80,
+    "marketValue": 7090.00,
+    "gainLossPct": 38.6
+  },
+  {
+    "ticker": "AMZN",
+    "name": "Amazon.com Inc.",
+    "sector": "Consumer Discretionary",
+    "shares": 35,
+    "costBasis": 115.00,
+    "marketPrice": 153.40,
+    "marketValue": 5369.00,
+    "gainLossPct": 33.4
+  },
+  {
+    "ticker": "TSLA",
+    "name": "Tesla Inc.",
+    "sector": "Consumer Discretionary",
+    "shares": 20,
+    "costBasis": 210.00,
+    "marketPrice": 188.50,
+    "marketValue": 3770.00,
+    "gainLossPct": -10.2
+  },
+  {
+    "ticker": "JPM",
+    "name": "JPMorgan Chase & Co.",
+    "sector": "Financials",
+    "shares": 60,
+    "costBasis": 128.40,
+    "marketPrice": 172.10,
+    "marketValue": 10326.00,
+    "gainLossPct": 34.0
+  },
+  {
+    "ticker": "V",
+    "name": "Visa Inc. Class A",
+    "sector": "Financials",
+    "shares": 40,
+    "costBasis": 198.00,
+    "marketPrice": 255.30,
+    "marketValue": 10212.00,
+    "gainLossPct": 28.9
+  },
+  {
+    "ticker": "XOM",
+    "name": "Exxon Mobil Corp.",
+    "sector": "Energy",
+    "shares": 75,
+    "costBasis": 98.20,
+    "marketPrice": 104.70,
+    "marketValue": 7852.50,
+    "gainLossPct": 6.6
+  },
+  {
+    "ticker": "JNJ",
+    "name": "Johnson & Johnson",
+    "sector": "Healthcare",
+    "shares": 45,
+    "costBasis": 158.00,
+    "marketPrice": 162.40,
+    "marketValue": 7308.00,
+    "gainLossPct": 2.8
+  },
+  {
+    "ticker": "NVDA",
+    "name": "NVIDIA Corp.",
+    "sector": "Technology",
+    "shares": 15,
+    "costBasis": 410.00,
+    "marketPrice": 612.50,
+    "marketValue": 9187.50,
+    "gainLossPct": 49.3
+  }
+]
+}

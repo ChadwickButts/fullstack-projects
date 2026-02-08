@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
-const BASE_PATH = environment.basePath;
+const BASE_PATH = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root',

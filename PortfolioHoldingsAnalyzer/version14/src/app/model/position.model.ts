@@ -1,4 +1,4 @@
-export interface Position {
+export type Position = {
     ticker: string,
     name: string,
     sector: string,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from '../services/portfolio.service';
+import { Position } from '../model/position.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   standalone: false
 })
 export class DashboardComponent implements OnInit {
+  positions!: Position[];
 
-  constructor() { }
+  constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit(): void {
+    this.portfolioService.getPositions().subscribe(data => {
+      this.positions = data
+    });
   }
 
 }
