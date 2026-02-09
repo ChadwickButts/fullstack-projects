@@ -1,10 +1,21 @@
-<p>dashboard works!</p>
 <div style="display: block">
-<ag-grid-angular 
-    style="width: 100%; height: 550px;"
-    class="ag-theme-quartz-dark"
-    [defaultColDef]="defaultColDef"
-    [rowData]="positions$ | async" 
-    [columnDefs]="colDefs"
-></ag-grid-angular>
-</div>
+    
+    @if (positions$ | async; as portfolio) {
+            <app-summary [positions]="portfolio" (messageEvent)="childMessageReceived($event)"></app-summary>
+            <p>Message: {{ messageReceived }}</p>
+            <button (click)="getTickers()" >Get Tickers</button>
+            <ul>
+                @for (ticker of tickers; track ticker) {
+                    <li>{{ticker}}</li>
+                }
+            </ul>
+            <ag-grid-angular 
+                style="width: 100%; height: 550px;"
+                class="ag-theme-quartz-dark"
+                [defaultColDef]="defaultColDef"
+                [rowData]="portfolio" 
+                [columnDefs]="colDefs"
+            ></ag-grid-angular>
+
+        }
+    </div>
