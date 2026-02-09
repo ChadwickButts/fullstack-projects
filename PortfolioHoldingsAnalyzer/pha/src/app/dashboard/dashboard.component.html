@@ -3,7 +3,8 @@
 <ag-grid-angular 
     style="width: 100%; height: 550px;"
     class="ag-theme-quartz-dark"
-    [rowData]="positions" 
+    [defaultColDef]="defaultColDef"
+    [rowData]="positions$ | async" 
     [columnDefs]="colDefs"
 ></ag-grid-angular>
 </div>

@@ -12,18 +12,22 @@ const BASE_PATH = 'http://localhost:3000';
 })
 export class PortfolioService {
   constructor(private http: HttpClient) { }
-  
+
   /* can also inject service with inject function starting with v14
   private http = inject(HttpClient)
   */
 
-  getPositions() : Observable<Position[]> {
+  getPositions(): Observable<Position[]> {
     return this.http.get<Position[]>(`${BASE_PATH}/positions`);
   }
 
-  getPositionByTicker(ticker: string) : Observable<Position> | undefined {
+
+  getPositionByTicker(ticker: string): Observable<Position> | undefined {
     return this.http.get<Position>(`${BASE_PATH}/positions`).pipe(
       filter(val => val.ticker === ticker)
     )
+    
+    //return this.positionsByTicker$;
   }
+
 }

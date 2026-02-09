@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Position } from '../model/position.model';
 import { PortfolioService } from '../services/portfolio.service';
 import { ColDef } from 'ag-grid-community';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'dashboard',
@@ -11,12 +12,14 @@ import { ColDef } from 'ag-grid-community';
 })
 
 export class DashboardComponent {
-  positions!: Position[];
+  positions$!: Observable<Position[]>;
 
   constructor(private portfolioService: PortfolioService) { 
-    this.portfolioService.getPositions().subscribe( result => {
-      this.positions = result
-    })
+    this.positions$ = this.portfolioService.getPositions();
+  }
+
+  defaultColDef: ColDef = {
+    width: 160
   }
 
   colDefs: ColDef[] = [
